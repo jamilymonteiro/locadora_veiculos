@@ -1,0 +1,64 @@
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f4f6f9;
+}
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:230px;
+    height:100vh;
+
+    background:#1e293b;
+
+    padding-top:20px;
+}
+
+.logo{
+
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 20px;
+
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+
+    background:#334155;
+}
+
+.container{
+
+    margin-left:250px;
+    padding:30px;
+}
+
+.container-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+    margin-bottom:20px;
+}
