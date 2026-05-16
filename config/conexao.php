@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $usuario = "root";
-$senha = "naya";
+$senha = "";
 $banco = "vn_locacoes";
 
 $conexao = mysqli_connect(
