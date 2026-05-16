@@ -12,7 +12,7 @@ include("includes/menu.php");
         </h1>
         <hr>
         <p>
-            Bem-vindo ao sistema VN Locações.
+            Bem-vindo ao sistema Royal Car.
         </p>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="sidebar">
 
     <h2 class="logo">
-        VN Locações
+       Royal Car
     </h2>
 
     <a href="/locadora_veiculos/cliente/listarCliente.php">

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <title>
-        VN Locações
+        Royal Car
     </title>
 
     <link
