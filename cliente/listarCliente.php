@@ -71,6 +71,14 @@ include("../includes/menuAdmin.php");
                 <td>
 
                     <a
+                    href="editarCliente.php?id=<?= $cliente['id'] ?>"
+                    class="btn btn-warning btn-sm">
+
+                        Editar
+
+                    </a>
+
+                    <a
                     href="excluirCliente.php?id=<?= $cliente['id'] ?>"
                     class="btn btn-danger btn-sm">
 

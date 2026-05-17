@@ -109,6 +109,14 @@ include("../includes/menuAdmin.php");
                 <td>
 
                     <a
+                    href="editarVeiculo.php?id=<?= $veiculo['id'] ?>"
+                    class="btn btn-warning btn-sm">
+
+                        Editar
+
+                    </a>
+
+                    <a
                     href="excluirVeiculo.php?id=<?= $veiculo['id'] ?>"
                     class="btn btn-danger btn-sm">
 

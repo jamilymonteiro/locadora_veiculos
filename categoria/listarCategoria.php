@@ -60,6 +60,14 @@ include("../includes/menuAdmin.php");
                 <td>
 
                     <a
+                    href="editarCategoria.php?id=<?= $categoria['id'] ?>"
+                    class="btn btn-warning btn-sm">
+
+                        Editar
+
+                    </a>
+
+                    <a
                     href="excluirCategoria.php?id=<?= $categoria['id'] ?>"
                     class="btn btn-danger btn-sm">
 
