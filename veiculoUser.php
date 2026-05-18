@@ -16,33 +16,16 @@ include("config/conexao.php");
 
             <tr>
                 <th>Modelo</th>
+                <th>Ano</th>
                 <th>Placa</th>
                 <th>Marca</th>
                 <th>Categoria</th>
                 <th>Valor Diária</th>
-                <th>Status</th>
             </tr>
 
             <?php
 
-            $sql = "
-
-            SELECT
-            veiculo.*,
-            marca.nome AS marca,
-            categoria.nome AS categoria
-
-            FROM veiculo
-
-            INNER JOIN marca
-            ON veiculo.id_marca = marca.id
-
-            INNER JOIN categoria
-            ON veiculo.id_categoria = categoria.id
-
-            WHERE veiculo.status = true
-
-            ";
+            $sql = "SELECT * FROM vw_veiculos_disponiveis";
 
             $resultado = mysqli_query($conexao, $sql);
 
@@ -51,21 +34,11 @@ include("config/conexao.php");
 
             <tr>
                 <td><?= $dados['modelo'] ?></td>
+                <td><?= $dados['ano_fabricacao'] ?></td>
                 <td><?= $dados['placa'] ?></td>
                 <td><?= $dados['marca'] ?></td>
                 <td><?= $dados['categoria'] ?></td>
                 <td>R$ <?= $dados['valor_diaria'] ?></td>
-                <td>
-
-                    <?php
-                    if($dados['status'] == 1){
-                        echo "Disponível";
-                    }else{
-                        echo "Indisponível";
-                    }
-                ?>
-
-                </td>
             </tr>
 
             <?php } ?>

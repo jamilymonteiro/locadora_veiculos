@@ -43,8 +43,14 @@ include("config/conexao.php");
         SELECT
         aluguel.*,
         cliente.nome AS cliente,
-        veiculo.modelo AS veiculo
+        veiculo.modelo AS veiculo,
+        veiculo.valor_diaria,
 
+        fn_calcular_total_aluguel(
+        aluguel.data_inicio,
+        aluguel.data_fim,
+        veiculo.valor_diaria
+        ) AS total
         FROM aluguel
 
         INNER JOIN cliente
@@ -72,7 +78,8 @@ include("config/conexao.php");
                 <th>Data Início</th>
                 <th>Data Fim</th>
                 <th>Status</th>
-                
+                <th>Valor Diária</th>
+                <th>Total</th>
             </tr>
 
             <?php
@@ -80,26 +87,21 @@ include("config/conexao.php");
             ?>
 
             <tr>
-
                 <td><?= $dados['id'] ?></td>
-
                 <td><?= $dados['cliente'] ?></td>
-
                 <td><?= $dados['veiculo'] ?></td>
-
                 <td><?= $dados['data_inicio'] ?></td>
-
                 <td><?= $dados['data_fim'] ?></td>
-
                 <td><?= $dados['status'] ?></td>
-
+                <td>R$ <?= $dados['valor_diaria'] ?></td>
+                <td>
+                    R$ <?= number_format($dados['total'], 2, ',', '.') ?>
+                </td>
                 <td>
 
                 <?php
                 if($dados['status'] == 'ATIVO'){
                 ?>
-
-                
 
                 <?php } ?>
 
