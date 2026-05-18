@@ -50,7 +50,13 @@ include("config/conexao.php");
         aluguel.data_inicio,
         aluguel.data_fim,
         veiculo.valor_diaria
-        ) AS total
+        ) AS total,
+
+        fn_quantidade_dias(
+        aluguel.data_inicio,
+        aluguel.data_fim
+        ) AS dias
+
         FROM aluguel
 
         INNER JOIN cliente
@@ -64,6 +70,10 @@ include("config/conexao.php");
         ";
 
         $resultado = mysqli_query($conexao, $sql);
+
+        if(!$resultado){
+            die(mysqli_error($conexao));
+        }
 
     ?>
 
@@ -79,6 +89,7 @@ include("config/conexao.php");
                 <th>Data Fim</th>
                 <th>Status</th>
                 <th>Valor Diária</th>
+                <th>Dias</th>
                 <th>Total</th>
             </tr>
 
@@ -93,6 +104,7 @@ include("config/conexao.php");
                 <td><?= $dados['data_inicio'] ?></td>
                 <td><?= $dados['data_fim'] ?></td>
                 <td><?= $dados['status'] ?></td>
+                <td><?= $dados['dias'] ?> dias</td>
                 <td>R$ <?= $dados['valor_diaria'] ?></td>
                 <td>
                     R$ <?= number_format($dados['total'], 2, ',', '.') ?>

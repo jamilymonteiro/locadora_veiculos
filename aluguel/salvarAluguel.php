@@ -52,6 +52,18 @@ $id_veiculo
 $id_aluguel =
 mysqli_insert_id($conexao);
 
+$resultadoDias = mysqli_query($conexao,
+
+"SELECT fn_quantidade_dias(
+'$data_inicio',
+'$data_fim'
+) AS dias");
+
+$dias = mysqli_fetch_assoc($resultadoDias)['dias'];
+
+$termos = "Contrato válido por $dias dias.
+O veículo deverá ser devolvido na data prevista.";
+
 mysqli_query($conexao,
 
 "INSERT INTO contrato
@@ -64,7 +76,7 @@ id_aluguel
 VALUES
 (
 CURDATE(),
-'Contrato de locação gerado automaticamente.',
+'$termos',
 $id_aluguel
 )");
 
