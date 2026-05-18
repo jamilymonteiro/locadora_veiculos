@@ -1,6 +1,6 @@
 <div class="sidebar">
 
-    <h2 class="logo">
+    <h2 class="logo_titulo">
         Royal Car
     </h2>
 

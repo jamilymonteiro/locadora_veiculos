@@ -14,12 +14,11 @@ body{
     padding-top:20px;
 }
 
-.logo{
-    max-width: 40px;
-    max-height: 40px;
-    width: auto;
-    height: auto;
-    display: block;
+.logo_titulo{
+    margin:0;
+    margin-bottom:30px;
+    color:white;
+    text-align:center;
 }
 
 .sidebar a{
@@ -46,23 +45,3 @@ body{
     box-shadow:0 0 10px rgba(0,0,0,0.1);
     margin-bottom:20px;
 }
-
-.logo-sistema{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 20px;
-}
-
-.logo{
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-
-.nome-sistema{
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-}
-
