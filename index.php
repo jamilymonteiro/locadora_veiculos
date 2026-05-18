@@ -12,7 +12,10 @@ include("includes/menu.php");
         </h1>
         <hr>
         <p>
-            Bem-vindo ao sistema Royal Car.
+            Bem-vindo(a) ao sistema da Royal, locadora de veículos.
+        </p>
+        <p>
+            Consulte nosso catálogo de veículos disponíveis para aluguel, seus aluguéis e contratos de forma fácil e rápida!
         </p>
     </div>
 </div>

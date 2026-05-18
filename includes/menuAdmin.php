@@ -1,8 +1,6 @@
 <div class="sidebar">
 
-    <h2 class="logo">
-       Royal Car
-    </h2>
+    <h2 class="logo">Royal Car</h2>
 
     <a href="/locadora_veiculos/cliente/listarCliente.php">
         Clientes

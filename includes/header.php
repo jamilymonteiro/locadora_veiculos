@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
 
     <title>
-        Royal Car
+        Royal | Locadora de Veículos
     </title>
+    <link rel="icon" type="image/png" href="/locadora_veiculos/assets/img/logo.png">
 
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"

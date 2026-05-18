@@ -2,19 +2,45 @@
 
 include("../config/conexao.php");
 
+$id = $_POST['id'] ?? '';
+
 $nome = $_POST['nome'];
 $cpf = $_POST['cpf'];
 $telefone = $_POST['telefone'];
 $email = $_POST['email'];
 
-$sql = "INSERT INTO cliente
-(nome, cpf, telefone, email)
+if(!empty($id)){
 
-VALUES
-('$nome', '$cpf',
-'$telefone', '$email')";
+    $sql = "
+
+    UPDATE cliente SET
+
+    nome = '$nome',
+    cpf = '$cpf',
+    telefone = '$telefone',
+    email = '$email'
+
+    WHERE id = $id
+
+    ";
+
+}else{
+
+    $sql = "
+
+    INSERT INTO cliente
+    (nome, cpf, telefone, email)
+
+    VALUES
+    ('$nome', '$cpf',
+    '$telefone', '$email')
+
+    ";
+
+}
 
 mysqli_query($conexao, $sql);
 
 header("Location: listarCliente.php");
+
 ?>
