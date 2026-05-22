@@ -104,8 +104,8 @@ include("config/conexao.php");
                 <td><?= $dados['data_inicio'] ?></td>
                 <td><?= $dados['data_fim'] ?></td>
                 <td><?= $dados['status'] ?></td>
-                <td><?= $dados['dias'] ?> dias</td>
                 <td>R$ <?= $dados['valor_diaria'] ?></td>
+                <td><?= $dados['dias'] ?> dias</td>
                 <td>
                     R$ <?= number_format($dados['total'], 2, ',', '.') ?>
                 </td>

@@ -10,7 +10,7 @@ body{
     top:0;
     width:230px;
     height:100vh;
-    background:#1e293b;
+    background:#0d3068 !important;
     padding-top:20px;
 }
 
@@ -30,7 +30,7 @@ body{
 }
 
 .sidebar a:hover{
-    background:#334155;
+    background:#324764;
 }
 
 .container{
