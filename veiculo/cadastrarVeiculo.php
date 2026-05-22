@@ -118,9 +118,13 @@ include("../includes/menuAdmin.php");
 
             <button
             class="btn btn-primary">
-
                 Salvar
-
+            </button>
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="history.back()">
+                Cancelar
             </button>
 
         </form>

@@ -112,9 +112,13 @@ include("../includes/menuAdmin.php");
 
             <button
             class="btn btn-primary">
-
                 Finalizar aluguel
-
+            </button>
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="history.back()">
+                    Cancelar
             </button>
 
         </form>
