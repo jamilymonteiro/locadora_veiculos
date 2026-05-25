@@ -65,23 +65,13 @@ O sistema utiliza o banco de dados MySQL com as seguintes entidades:
 
 ---
 
-# Procedures, Functions e Views
+# Como abrir
 
-O projeto utiliza recursos avançados do banco de dados:
-
-## Procedures
-
-* Cadastro de aluguel
-* Encerramento de aluguel
-
-## Functions
-
-* Cálculo do valor total do aluguel
-
-## Views
-
-* View de aluguéis ativos
-* View de veículos disponíveis
+1. Coloque a pasta locadora_veiculos em htdocs
+2. Inicie Apache e MySQL no XAMPP
+3. Importe o arquivo vn_locacoes.sql no phpMyAdmin
+4. Acesse:
+http://localhost/locadora_veiculos
 
 ---
 
