@@ -16,7 +16,8 @@ veiculo.modelo,
 veiculo.placa,
 
 aluguel.data_inicio,
-aluguel.data_fim
+aluguel.data_fim,
+pagamento.pagamento_tipo
 
 FROM contrato
 
@@ -29,6 +30,9 @@ ON aluguel.id_cliente = cliente.id
 INNER JOIN veiculo
 ON aluguel.id_veiculo = veiculo.id
 
+INNER JOIN pagamento
+ON aluguel.id_pagamento = pagamento.id
+
 WHERE contrato.id = $id
 
 ";
@@ -38,7 +42,7 @@ $resultado = mysqli_query($conexao, $sql);
 $contrato = mysqli_fetch_assoc($resultado);
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 
 ?>
 
@@ -53,62 +57,53 @@ include("../includes/menuAdmin.php");
         <hr>
 
         <p>
-
             <strong>Cliente:</strong>
-
             <?= $contrato['cliente'] ?>
-
         </p>
 
         <p>
-
             <strong>CPF:</strong>
-
             <?= $contrato['cpf'] ?>
-
         </p>
 
         <p>
-
             <strong>Veículo:</strong>
-
             <?= $contrato['modelo'] ?>
-
         </p>
 
         <p>
-
             <strong>Placa:</strong>
-
             <?= $contrato['placa'] ?>
-
         </p>
 
         <p>
-
             <strong>Data início:</strong>
-
             <?= $contrato['data_inicio'] ?>
-
         </p>
 
         <p>
-
             <strong>Data fim:</strong>
-
             <?= $contrato['data_fim'] ?>
+        </p>
 
+        <p>
+            <strong>Forma de pagamento:</strong>
+            <?= $contrato['pagamento_tipo'] ?>
         </p>
 
         <hr>
-
         <h4>Termos</h4>
-
         <p>
-
             <?= $contrato['termos'] ?>
-
         </p>
+
+        <hr>
+        <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="history.back()">
+            Voltar
+        </button>
 
     </div>
 

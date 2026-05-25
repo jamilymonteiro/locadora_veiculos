@@ -20,7 +20,7 @@ ON veiculo.id_categoria = categoria.id
 $resultado = mysqli_query($conexao, $sql);
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 
 ?>
 
@@ -32,11 +32,14 @@ include("../includes/menuAdmin.php");
 
             <h2>Veículos</h2>
 
+            <a href="veiculosDisponiveis.php"
+            class="btn btn-primary">
+                Veículos Disponíveis
+            </a>
+
             <a href="cadastrarVeiculo.php"
             class="btn btn-success">
-
                 Novo Veículo
-
             </a>
 
         </div>
@@ -111,17 +114,13 @@ include("../includes/menuAdmin.php");
                     <a
                     href="editarVeiculo.php?id=<?= $veiculo['id'] ?>"
                     class="btn btn-warning btn-sm">
-
                         Editar
-
                     </a>
 
                     <a
                     href="excluirVeiculo.php?id=<?= $veiculo['id'] ?>"
                     class="btn btn-danger btn-sm">
-
                         Excluir
-
                     </a>
 
                 </td>

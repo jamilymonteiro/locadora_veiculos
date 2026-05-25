@@ -1,11 +1,11 @@
 <?php
+
 include("includes/header.php");
 include("includes/menu.php");
 
 ?>
 
 <div class="container">
-
     <div class="container-box">
         <h1>
             Sistema de Locadora de Veículos
@@ -15,7 +15,7 @@ include("includes/menu.php");
             Bem-vindo(a) ao sistema da Royal, locadora de veículos.
         </p>
         <p>
-            Consulte nosso catálogo de veículos disponíveis para aluguel, seus aluguéis e contratos de forma fácil e rápida!
+            Gerencie seus aluguéis, veículos, clientes e muito mais!
         </p>
     </div>
 </div>

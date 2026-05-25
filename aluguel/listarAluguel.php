@@ -2,27 +2,12 @@
 
 include("../config/conexao.php");
 
-$sql = "
-
-SELECT
-aluguel.*,
-cliente.nome AS cliente,
-veiculo.modelo AS veiculo
-
-FROM aluguel
-
-INNER JOIN cliente
-ON aluguel.id_cliente = cliente.id
-
-INNER JOIN veiculo
-ON aluguel.id_veiculo = veiculo.id
-
-";
+$sql = "SELECT * FROM vw_listaralugueis";
 
 $resultado = mysqli_query($conexao, $sql);
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 
 ?>
 
@@ -36,9 +21,7 @@ include("../includes/menuAdmin.php");
 
             <a href="cadastrarAluguel.php"
             class="btn btn-success">
-
                 Novo Aluguel
-
             </a>
 
         </div>
@@ -54,6 +37,9 @@ include("../includes/menuAdmin.php");
                 <th>Veículo</th>
                 <th>Início</th>
                 <th>Fim</th>
+                <th>Valor Diária</th>
+                <th>Dias</th>
+                <th>Total</th>
                 <th>Status</th>
                 <th>Ações</th>
 
@@ -87,6 +73,18 @@ include("../includes/menuAdmin.php");
                 </td>
 
                 <td>
+                    R$ <?= number_format($aluguel['valor_diaria'], 2, ',', '.') ?>
+                </td>
+
+                <td>
+                    <?= $aluguel['dias'] ?>
+                </td>
+
+                <td>
+                    R$ <?= number_format($aluguel['total'], 2, ',', '.') ?>
+                </td>
+
+                <td>
                     <?= $aluguel['status'] ?>
                 </td>
                 <td>
@@ -97,9 +95,7 @@ include("../includes/menuAdmin.php");
                     <a
                     href="finalizarAluguel.php?id=<?= $aluguel['id'] ?>&veiculo=<?= $aluguel['id_veiculo'] ?>"
                     class="btn btn-danger btn-sm">
-
                         Finalizar
-
                     </a>
 
                     <?php } ?>

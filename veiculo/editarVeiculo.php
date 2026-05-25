@@ -1,6 +1,5 @@
 <?php
 
-include("../includes/verificaAdmin.php");
 include("../config/conexao.php");
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -27,7 +26,7 @@ $categorias = mysqli_query($conexao,
     "SELECT * FROM categoria");
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 ?>
 
 <div class="container">

@@ -30,7 +30,7 @@ ON aluguel.id_veiculo = veiculo.id
 $resultado = mysqli_query($conexao, $sql);
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 
 ?>
 
@@ -82,9 +82,7 @@ include("../includes/menuAdmin.php");
                     <a
                     href="visualizarContrato.php?id=<?= $contrato['id'] ?>"
                     class="btn btn-primary btn-sm">
-
                         Visualizar
-
                     </a>
 
                 </td>

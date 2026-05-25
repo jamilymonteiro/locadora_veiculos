@@ -1,6 +1,6 @@
 <?php
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 ?>
 
 <div class="container">

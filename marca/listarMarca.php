@@ -6,7 +6,7 @@ $resultado = mysqli_query($conexao,
 "SELECT * FROM marca ORDER BY id ASC");
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 
 ?>
 
@@ -57,17 +57,13 @@ include("../includes/menuAdmin.php");
                     <a
                     href="editarMarca.php?id=<?= $marca['id'] ?>"
                     class="btn btn-warning btn-sm">
-
                         Editar
-
                     </a>
 
                     <a
                     href="excluirMarca.php?id=<?= $marca['id'] ?>"
                     class="btn btn-danger btn-sm">
-
                         Excluir
-
                     </a>
 
                 </td>

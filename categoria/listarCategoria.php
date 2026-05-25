@@ -6,7 +6,7 @@ $resultado = mysqli_query($conexao,
 "SELECT * FROM categoria");
 
 include("../includes/header.php");
-include("../includes/menuAdmin.php");
+include("../includes/menu.php");
 
 ?>
 

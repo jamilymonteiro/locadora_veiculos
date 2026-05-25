@@ -61,7 +61,6 @@ O sistema utiliza o banco de dados MySQL com as seguintes entidades:
 * Ao encerrar um aluguel:
   * o veículo volta a ficar disponível.
 * Cada contrato pertence a apenas um aluguel.
-* Cada aluguel possui um pagamento associado.
 
 ---
 

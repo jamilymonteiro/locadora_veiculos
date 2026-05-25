@@ -1,10 +1,6 @@
 <?php
 
-/* include("../config/conexao.php");
-
-$id_aluguel = $_GET['id'];
-$id_veiculo = $_GET['veiculo'];
-
+/* 
 mysqli_query($conexao,
 
 "UPDATE aluguel
