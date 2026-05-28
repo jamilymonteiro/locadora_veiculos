@@ -2,7 +2,8 @@
 
 include("../config/conexao.php");
 
-$sql = "SELECT * FROM vw_listaralugueis";
+$sql = "SELECT * FROM vw_listaralugueis
+ORDER BY id DESC";
 
 $resultado = mysqli_query($conexao, $sql);
 
