@@ -4,87 +4,24 @@ include("../config/conexao.php");
 
 $id_cliente = $_POST['id_cliente'];
 $id_veiculo = $_POST['id_veiculo'];
-
 $data_inicio = $_POST['data_inicio'];
 $data_fim = $_POST['data_fim'];
-
 $pagamento_tipo = $_POST['pagamento_tipo'];
 
-$valor = 500;
-
-mysqli_query($conexao,
-
-"INSERT INTO pagamento
-(valor, data, pagamento_tipo)
-
-VALUES
-(
-$valor,
-CURDATE(),
-'$pagamento_tipo'
-)");
-
-$id_pagamento =
-mysqli_insert_id($conexao);
-
-mysqli_query($conexao,
-
-"INSERT INTO aluguel
-(
-data_inicio,
-data_fim,
-status,
-id_pagamento,
-id_cliente,
-id_veiculo
-)
-
-VALUES
-(
+$sql = "CALL sp_realizar_aluguel(
 '$data_inicio',
 '$data_fim',
-'ATIVO',
-$id_pagamento,
 $id_cliente,
-$id_veiculo
-)");
+$id_veiculo,
+'$pagamento_tipo'
+)";
 
-$id_aluguel =
-mysqli_insert_id($conexao);
+if(!mysqli_query($conexao, $sql)){
 
-$resultadoDias = mysqli_query($conexao,
+    die(mysqli_error($conexao));
 
-"SELECT fn_quantidade_dias(
-'$data_inicio',
-'$data_fim'
-) AS dias");
-
-$dias = mysqli_fetch_assoc($resultadoDias)['dias'];
-
-$termos = "Contrato válido por $dias dias.
-O veículo deverá ser devolvido na data prevista.";
-
-mysqli_query($conexao,
-
-"INSERT INTO contrato
-(
-data_emissao,
-termos,
-id_aluguel
-)
-
-VALUES
-(
-CURDATE(),
-'$termos',
-$id_aluguel
-)");
-
-mysqli_query($conexao,
-
-"UPDATE veiculo
-SET status = false
-WHERE id = $id_veiculo");
+}
 
 header("Location: listarAluguel.php");
+
 ?>

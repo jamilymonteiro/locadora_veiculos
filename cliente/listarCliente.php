@@ -3,7 +3,8 @@
 include("../config/conexao.php");
 
 $resultado = mysqli_query($conexao,
-"SELECT * FROM cliente");
+"SELECT * FROM cliente
+ORDER BY id DESC");
 
 include("../includes/header.php");
 include("../includes/menu.php");

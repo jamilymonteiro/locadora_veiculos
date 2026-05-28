@@ -40,6 +40,7 @@ include("../includes/menu.php");
                 <th>Valor Diária</th>
                 <th>Dias</th>
                 <th>Total</th>
+                <th>Multa</th>
                 <th>Status</th>
                 <th>Ações</th>
 
@@ -82,6 +83,16 @@ include("../includes/menu.php");
 
                 <td>
                     R$ <?= number_format($aluguel['total'], 2, ',', '.') ?>
+                </td>
+
+                <td>
+                    <?php
+                    if($aluguel['multa'] > 0){?>
+                        R$
+                        <?= number_format($aluguel['multa'], 2, ',', '.') ?>
+                    <?php }else{ ?>
+                        Sem multa
+                    <?php } ?>
                 </td>
 
                 <td>

@@ -15,6 +15,8 @@ ON veiculo.id_marca = marca.id
 
 INNER JOIN categoria
 ON veiculo.id_categoria = categoria.id
+
+ORDER BY veiculo.id DESC
 ";
 
 $resultado = mysqli_query($conexao, $sql);

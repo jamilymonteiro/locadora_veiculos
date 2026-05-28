@@ -3,7 +3,7 @@
 include("../config/conexao.php");
 
 $resultado = mysqli_query($conexao,
-"SELECT * FROM marca ORDER BY id ASC");
+"SELECT * FROM marca ORDER BY id DESC");
 
 include("../includes/header.php");
 include("../includes/menu.php");

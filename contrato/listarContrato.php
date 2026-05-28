@@ -25,6 +25,7 @@ ON aluguel.id_cliente = cliente.id
 INNER JOIN veiculo
 ON aluguel.id_veiculo = veiculo.id
 
+ORDER BY contrato.id DESC
 ";
 
 $resultado = mysqli_query($conexao, $sql);
