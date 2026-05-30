@@ -160,65 +160,6 @@ VALUES (
     1
 );
 
--- ------ VIEWS ------
-
-CREATE VIEW vw_veiculos_disponiveis AS
-
-SELECT
-veiculo.id,
-veiculo.modelo,
-veiculo.ano_fabricacao,
-veiculo.placa,
-veiculo.valor_diaria,
-marca.nome AS marca,
-categoria.nome AS categoria
-FROM veiculo
-
-INNER JOIN marca
-ON veiculo.id_marca = marca.id
-
-INNER JOIN categoria
-ON veiculo.id_categoria = categoria.id
-
-WHERE veiculo.status = 1;
-
--- --
-
-CREATE VIEW vw_listaralugueis AS
-
-SELECT
-aluguel.id,
-aluguel.data_inicio,
-aluguel.data_fim,
-aluguel.status,
-aluguel.id_veiculo,
-cliente.nome AS cliente,
-veiculo.modelo AS veiculo,
-veiculo.valor_diaria,
-
-fn_quantidade_dias(
-aluguel.data_inicio,
-aluguel.data_fim
-) AS dias,
-
-fn_calcular_total_aluguel(
-aluguel.data_inicio,
-aluguel.data_fim,
-veiculo.valor_diaria
-) AS total,
-
-fn_calcular_multa(
-aluguel.data_fim
-) AS multa
-
-FROM aluguel
-
-INNER JOIN cliente
-ON aluguel.id_cliente = cliente.id
-
-INNER JOIN veiculo
-ON aluguel.id_veiculo = veiculo.id;
-
 -- ------ FUNCTIONS -----
 
 DELIMITER $$
@@ -288,8 +229,6 @@ RETURN multa;
 
 END $$
 DELIMITER ;
-
--- --
 
 -- ----- STORED PROCEDURES -----
 
@@ -492,4 +431,61 @@ p_email);
 END $$
 DELIMITER ;
 
---
+-- ------ VIEWS ------
+
+CREATE VIEW vw_veiculos_disponiveis AS
+
+SELECT
+veiculo.id,
+veiculo.modelo,
+veiculo.ano_fabricacao,
+veiculo.placa,
+veiculo.valor_diaria,
+marca.nome AS marca,
+categoria.nome AS categoria
+FROM veiculo
+
+INNER JOIN marca
+ON veiculo.id_marca = marca.id
+
+INNER JOIN categoria
+ON veiculo.id_categoria = categoria.id
+
+WHERE veiculo.status = 1;
+
+-- --
+
+CREATE VIEW vw_listaralugueis AS
+
+SELECT
+aluguel.id,
+aluguel.data_inicio,
+aluguel.data_fim,
+aluguel.status,
+aluguel.id_veiculo,
+cliente.nome AS cliente,
+veiculo.modelo AS veiculo,
+veiculo.valor_diaria,
+
+fn_quantidade_dias(
+aluguel.data_inicio,
+aluguel.data_fim
+) AS dias,
+
+fn_calcular_total_aluguel(
+aluguel.data_inicio,
+aluguel.data_fim,
+veiculo.valor_diaria
+) AS total,
+
+fn_calcular_multa(
+aluguel.data_fim
+) AS multa
+
+FROM aluguel
+
+INNER JOIN cliente
+ON aluguel.id_cliente = cliente.id
+
+INNER JOIN veiculo
+ON aluguel.id_veiculo = veiculo.id;
